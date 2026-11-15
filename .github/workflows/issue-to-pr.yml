@@ -1,0 +1,82 @@
+name: Issue to pull request
+
+on:
+  issues:
+    types: [opened, edited, labeled]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  actions: write
+
+concurrency:
+  group: issue-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    if: contains(github.event.issue.labels.*.name, 'new-collection')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - id: form
+        run: node scripts/issue-form.ts
+      - name: Report form errors
+        if: steps.form.outputs.error
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+          MESSAGE: ${{ steps.form.outputs.error }}
+        run: |
+          printf '%s\n\nEdit the issue to fix it; the bot runs again.\n' "$MESSAGE" > /tmp/comment.md
+          gh issue comment "$ISSUE" --body-file /tmp/comment.md
+      - name: Build manifest
+        if: steps.form.outputs.id
+        id: build
+        run: |
+          set +e
+          node -e 'const a=require("./.cache-args.json");require("child_process").execFileSync("node",["scripts/new-collection.ts",...a],{stdio:"inherit"})' > /tmp/build.log 2>&1
+          echo "status=$?" >> "$GITHUB_OUTPUT"
+          cat /tmp/build.log
+          rm -f .cache-args.json .cache-works.txt
+      - name: Open or update pull request
+        if: steps.form.outputs.id && steps.build.outputs.status != '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+          ID: ${{ steps.form.outputs.id }}
+          AUTHOR: ${{ github.event.issue.user.login }}
+        run: |
+          branch="collection/issue-$ISSUE"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$branch"
+          git add "collections/$ID.json"
+          git commit -m "feat(collections): Add $ID from #$ISSUE" -m "Requested by @$AUTHOR in #$ISSUE."
+          git push --force origin "$branch"
+          { echo "Generated from #$ISSUE by the issue form bot."; echo; echo "Closes #$ISSUE"; echo; echo '```'; cat /tmp/build.log; echo '```'; } > /tmp/pr.md
+          if ! gh pr view "$branch" > /dev/null 2>&1; then
+            gh pr create --head "$branch" --title "feat(collections): Add $ID" --body-file /tmp/pr.md
+          else
+            gh pr edit "$branch" --body-file /tmp/pr.md
+          fi
+          gh workflow run ci.yml --ref "$branch"
+          url=$(gh pr view "$branch" --json url --jq .url)
+          { echo "Opened $url"; echo; echo '```'; cat /tmp/build.log; echo '```'; } > /tmp/comment.md
+          gh issue comment "$ISSUE" --body-file /tmp/comment.md
+      - name: Report build failure
+        if: steps.form.outputs.id && steps.build.outputs.status == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+        run: |
+          { echo "None of the works could be used:"; echo; echo '```'; cat /tmp/build.log; echo '```'; } > /tmp/comment.md
+          gh issue comment "$ISSUE" --body-file /tmp/comment.md

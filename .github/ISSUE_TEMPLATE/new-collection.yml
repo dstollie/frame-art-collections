@@ -1,0 +1,57 @@
+name: New collection
+description: Propose a collection of openly licensed artworks. A bot turns it into a pull request.
+title: "New collection: "
+labels: ["new-collection"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        List works that are public domain, CC0, CC BY or CC BY-SA. A bot looks each one up, checks licence and resolution and opens a pull request. Works it cannot verify are listed in a comment.
+  - type: input
+    attributes:
+      label: Collection id
+      description: Lowercase letters, digits and dashes. Becomes the file name.
+      placeholder: misty-mornings
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Title
+      placeholder: Misty mornings
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Description
+      description: One or two sentences, 20–600 characters.
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Tags
+      description: Comma-separated.
+      placeholder: mist, landscape, calm
+  - type: input
+    attributes:
+      label: Curator name
+      description: How you want to be credited. Defaults to your GitHub name.
+  - type: textarea
+    attributes:
+      label: Works
+      description: |
+        One per line. Supported: Wikimedia Commons file pages (`https://commons.wikimedia.org/wiki/File:…`),
+        Wikidata items (`Q12418`), SMK (`https://open.smk.dk/artwork/image/KMS3352`) and The Met (`https://www.metmuseum.org/art/collection/search/436535`).
+      render: text
+    validations:
+      required: true
+  - type: checkboxes
+    attributes:
+      label: AI-generated
+      options:
+        - label: These works were made with generative AI
+  - type: checkboxes
+    attributes:
+      label: Checks
+      options:
+        - label: Every work is public domain or under CC0, CC BY or CC BY-SA, and I linked to the page that says so
+          required: true
