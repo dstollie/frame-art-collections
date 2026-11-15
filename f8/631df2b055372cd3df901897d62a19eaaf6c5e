@@ -1,0 +1,28 @@
+scripts/seed/defs.ts
+  s_35b33d2053e250::t_05c4414fc9b9de 376,381-389
+  s_35b33d2053e250::t_ec4a5ae7afe994 17,393-395,408-416,445-447,450
+README.md
+  s_35b33d2053e250::t_57fcb5919fd1af 29-30,34,45
+schema/collection.v1.schema.json
+  s_35b33d2053e250::t_3cc082cd8945a7 104
+scripts/seed/moods.ts
+  s_35b33d2053e250::t_25fd3a480bfb12 43
+scripts/seed/pipeline.ts
+  s_35b33d2053e250::t_eeba3f6f975c68 20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f8631df2b055372cd3df901897d62a19eaaf6c5e",
+  "prompts": {},
+  "sessions": {
+    "s_35b33d2053e250": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "506a1efe-c71b-46d2-9d51-9112d86d6e2d",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Dennis Stolmeijer <dennisstolmeijer@gmail.com>"
+    }
+  }
+}
