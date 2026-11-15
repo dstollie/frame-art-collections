@@ -1,0 +1,64 @@
+{
+  "$schema": "https://dstollie.github.io/frame-art-collections/schema/collection.v1.schema.json",
+  "schema_version": 1,
+  "id": "test-issue-form",
+  "title": "Issue form test",
+  "description": "Smoke test of the issue form bot; will be closed without merging.",
+  "tags": [
+    "test"
+  ],
+  "curator": {
+    "name": "dstollie",
+    "github": "dstollie"
+  },
+  "cover": "met-436535",
+  "items": [
+    {
+      "id": "wikidata-Q12418",
+      "title": "Mona Lisa",
+      "artist": "Leonardo da Vinci",
+      "year": 1503,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg",
+      "image_4k": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/3840px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg",
+      "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/960px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg",
+      "width": 7479,
+      "height": 11146,
+      "licence": "PD",
+      "source": "Department of Paintings of the Louvre via Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg",
+      "ai_generated": false
+    },
+    {
+      "id": "smk-KMS3352",
+      "title": "Kunstnerens hustru Ida Hammershøi med en tekop",
+      "artist": "Vilhelm Hammershøi",
+      "year": 1907,
+      "date": "1907",
+      "image": "https://api.smk.dk/api/v1/download/W3siaW1nX3VybCI6Imh0dHBzOi8vaWlwLnNtay5kay9paWlmL2pwMi9wbjg5ZDk1NnZfS01TMzM1Mi1jcm9wcGVkLnRpZi5qcDIvZnVsbC9mdWxsLzAvbmF0aXZlLmpwZyIsInB1YmxpY19kb21haW4iOnRydWUsIm9iamVjdF9udW1iZXIiOiJLTVMzMzUyIiwibnVtIjoiIn1d/KMS3352.jpg",
+      "image_4k": "https://iip.smk.dk/iiif/jp2/pn89d956v_KMS3352-cropped.tif.jp2/full/!3840,3840/0/default.jpg",
+      "thumbnail": "https://iip-thumb.smk.dk/iiif/jp2/pn89d956v_KMS3352-cropped.tif.jp2/full/!1024,/0/default.jpg",
+      "iiif": "https://iip.smk.dk/iiif/jp2/pn89d956v_KMS3352-cropped.tif.jp2",
+      "width": 5750,
+      "height": 7229,
+      "licence": "PD",
+      "source": "SMK – Statens Museum for Kunst",
+      "source_url": "https://open.smk.dk/artwork/image/KMS3352",
+      "ai_generated": false
+    },
+    {
+      "id": "met-436535",
+      "title": "Wheat Field with Cypresses",
+      "artist": "Vincent van Gogh",
+      "year": 1889,
+      "date": "1889",
+      "image": "https://images.metmuseum.org/CRDImages/ep/original/DP-42549-001.jpg",
+      "thumbnail": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-42549-001.jpg",
+      "width": 4000,
+      "height": 3184,
+      "licence": "CC0-1.0",
+      "source": "The Metropolitan Museum of Art",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436535",
+      "ai_generated": false
+    }
+  ]
+}
