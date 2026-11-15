@@ -17,7 +17,7 @@ export type SourceSpec =
   | { kind: "smk"; keys: string; filters?: string[]; fame?: number }
 
 const BAD_FILE =
-  /\b(frame|framed|cadre|rahmen|gerahmt|detail|details|x-?ray|infrared|verso|in situ|installation view|signature)\b/i
+  /\b(frame|framed|cadre|rahmen|gerahmt|detail|details|x-?ray|infrared|verso|in situ|installation view|signature|rawpixel|salon du livre)\b/i
 const NOT_FOR_THE_LIVING_ROOM = /origine du monde/i
 const IMAGE_MIME = /^image\/(jpeg|png|webp)$/
 

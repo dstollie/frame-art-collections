@@ -101,7 +101,7 @@
           "$ref": "#/$defs/httpsUrl"
         },
         "image_4k": {
-          "description": "Optional rendition of about 3840 px on the long edge. Prefer this over 'image' when the master is huge.",
+          "description": "Optional smaller rendition: 3840 px wide (Wikimedia Commons' largest standard thumbnail) or fitting 3840×3840 (IIIF). Prefer it over 'image' when the master is huge.",
           "$ref": "#/$defs/httpsUrl"
         },
         "thumbnail": {

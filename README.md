@@ -26,12 +26,12 @@ An item looks like this:
   "artist": "Leonardo da Vinci",
   "year": 1503,
   "image": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg",
-  "image_4k": "https://upload.wikimedia.org/…/3840px-….jpg",
-  "thumbnail": "https://upload.wikimedia.org/…/960px-….jpg",
+  "image_4k": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/3840px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg",
+  "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/960px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg",
   "width": 7479,
   "height": 11146,
   "licence": "PD",
-  "source": "Louvre via Wikimedia Commons",
+  "source": "Department of Paintings of the Louvre via Wikimedia Commons",
   "source_url": "https://commons.wikimedia.org/wiki/File:Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg",
   "ai_generated": false
 }
@@ -42,7 +42,7 @@ An item looks like this:
 | `id`                              | Stable id, `<source>-<id at the source>`                                           |
 | `title`, `artist`, `year`, `date` | What to show. `year` is the start year or `null`; `date` is the source's free text |
 | `image`                           | Highest resolution the source offers                                               |
-| `image_4k`                        | Optional ~3840 px rendition; use it when present                                   |
+| `image_4k`                        | Optional smaller rendition (3840 px wide on Commons, fits 3840×3840 on IIIF)       |
 | `thumbnail`                       | Optional preview for browsing (400–1280 px)                                        |
 | `iiif`                            | Optional IIIF Image API base URL, for any size you like                            |
 | `width`, `height`                 | Pixel size of `image`                                                              |

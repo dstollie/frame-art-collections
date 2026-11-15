@@ -40,7 +40,7 @@ export const MOODS: Mood[] = [
     description:
       "Low-key paintings with deep shadows that look natural on The Frame in a dim room at night. Picked by brightness.",
     tags: ["colour", "dark", "mood", "night"],
-    fit: (c) => (c.l < 0.24 ? 0.3 - c.l : 0),
+    fit: (c) => (c.l < 0.24 && c.l > 0.09 ? 0.3 - c.l : 0),
   },
   {
     id: "mood-light-and-airy",

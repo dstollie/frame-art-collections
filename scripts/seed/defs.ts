@@ -14,6 +14,7 @@ export interface Def {
 }
 
 const painting = "?item wdt:P31 wd:Q3305213 ."
+const BOOK_PAGES = /\b(title|page|text|frontispiece|index|cover|wiki loves|dedication)\b/i
 const movement = (q: string) =>
   `${painting} { ?item wdt:P135 wd:${q} . } UNION { ?item wdt:P170 ?mc . ?mc wdt:P135 wd:${q} . }`
 const genre = (q: string) => `${painting} ?item wdt:P136 wd:${q} .`
@@ -372,22 +373,27 @@ export const DEFS: Def[] = [
     id: "botanical-illustration",
     title: "Botanical illustration",
     description:
-      "Hand-coloured plates by Redouté, Merian and the great botanical artists; mostly portrait format, ideal for a Frame on its side.",
+      "Redouté's roses, lilies, fruit and vellum paintings; mostly portrait format, ideal for a Frame on its side.",
     tags: ["botanical", "flowers", "illustration", "portrait-format"],
     sources: [
       {
         kind: "commons",
-        query: 'deepcat:"Pierre-Joseph Redouté" filew:>2500',
-        max: 600,
-        exclude: /rue|street|statue|grave|bust|portrait of/i,
+        query: 'deepcat:"Paintings by Pierre-Joseph Redouté in the cabinet des vélins" filew:>2500',
+        max: 50,
+        fame: 8,
       },
       {
         kind: "commons",
-        query: 'deepcat:"Maria Sibylla Merian" filew:>2500',
-        max: 300,
-        exclude: /statue|portrait|stamp|banknote/i,
+        query: 'deepcat:"Watercolor paintings by Pierre-Joseph Redouté" filew:>2500',
+        max: 50,
+        fame: 8,
       },
-      { kind: "commons", query: 'deepcat:"Curtis\'s Botanical Magazine" filew:>2500', max: 300 },
+      {
+        kind: "commons",
+        query: 'deepcat:"Botanical illustrations by Pierre-Joseph Redouté" filew:>2500',
+        max: 900,
+        exclude: BOOK_PAGES,
+      },
     ],
     size: 160,
     minPx: 2500,
@@ -399,7 +405,15 @@ export const DEFS: Def[] = [
     description:
       "Haeckel's 1904 plates of jellyfish, radiolarians, corals and orchids: symmetry and pattern from nature.",
     tags: ["haeckel", "nature", "illustration", "portrait-format"],
-    sources: [{ kind: "commons", query: 'deepcat:"Kunstformen der Natur" filew:>2500', max: 600 }],
+    sources: [
+      {
+        kind: "commons",
+        query: 'deepcat:"Kunstformen der Natur" filew:>2500',
+        max: 600,
+        include: /Tafel|LCCN/,
+        exclude: BOOK_PAGES,
+      },
+    ],
     size: 100,
     minPx: 2500,
     perArtist: 100,
@@ -427,16 +441,13 @@ export const DEFS: Def[] = [
       "World maps, celestial charts and atlases from the 14th to the 19th century, scanned at very high resolution.",
     tags: ["maps", "cartography", "history"],
     sources: [
-      { kind: "commons", query: 'incategory:"Featured pictures of maps" filew:>4000', max: 300, fame: 10 },
       {
-        kind: "commons",
-        query: 'deepcat:"Old maps of the world" filew:>5000',
-        max: 800,
-        exclude: /\b(text|page|title|index|cover)\b/i,
+        kind: "wikidata",
+        where: "VALUES ?t { wd:Q4006 wd:Q653848 wd:Q728502 wd:Q842617 } ?item wdt:P31 ?t .",
+        limit: 2000,
       },
-      { kind: "commons", query: 'deepcat:"Celestial maps" filew:>4000', max: 300 },
     ],
-    size: 150,
+    size: 90,
     perArtist: 15,
   },
 ]
