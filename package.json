@@ -1,0 +1,35 @@
+{
+  "name": "frame-art-collections",
+  "private": true,
+  "description": "Community art collections for Frame Art, the Home Assistant add-on for Samsung The Frame",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate.ts",
+    "validate:urls": "node scripts/validate.ts --check-urls",
+    "index": "node scripts/build-index.ts",
+    "build": "node scripts/build-site.ts",
+    "seed": "node scripts/seed.ts",
+    "new": "node scripts/new-collection.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint --deny-warnings --report-unused-disable-directives",
+    "lint:fix": "oxlint --fix",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "test": "node --test 'scripts/**/*.test.ts'",
+    "check": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm test && pnpm validate"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "oxfmt": "^0.78.0",
+    "oxlint": "^1.93.0",
+    "sharp": "^0.35.5",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "pnpm@11.17.0"
+}

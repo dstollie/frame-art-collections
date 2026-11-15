@@ -1,0 +1,17 @@
+{
+  "semi": false,
+  "printWidth": 120,
+  "sortPackageJson": {},
+  "sortImports": {},
+  "ignorePatterns": [
+    ".git/",
+    "node_modules/",
+    "dist/",
+    ".cache/",
+    ".agents/",
+    ".claude/",
+    "collections/",
+    "knowledge/",
+    "pnpm-lock.yaml"
+  ]
+}

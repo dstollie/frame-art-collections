@@ -1,0 +1,22 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "eslint", "unicorn", "oxc", "import"],
+  "categories": {
+    "correctness": "warn",
+    "suspicious": "warn",
+    "perf": "warn"
+  },
+  "rules": {
+    "typescript/no-explicit-any": "error",
+    "eslint/no-await-in-loop": "off"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.test.ts"],
+      "rules": {
+        "unicorn/consistent-function-scoping": "off"
+      }
+    }
+  ],
+  "ignorePatterns": [".git/", "node_modules/", "dist/", ".cache/", ".agents/", ".claude/", "collections/", "knowledge/"]
+}
