@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dstollie.github.io/frame-art-collections/schema/index.v1.schema.json",
+  "title": "Frame Art collections index, version 1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "generated_at", "collections", "totals"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "commit": { "type": "string" },
+    "totals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["collections", "items", "unique_items"],
+      "properties": {
+        "collections": { "type": "integer" },
+        "items": { "type": "integer" },
+        "unique_items": { "type": "integer" }
+      }
+    },
+    "collections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "description",
+          "tags",
+          "curator",
+          "url",
+          "count",
+          "landscape_count",
+          "uhd_count",
+          "ai_generated_count",
+          "licences",
+          "cover"
+        ],
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "tags": { "type": "array", "items": { "type": "string" } },
+          "curator": { "type": "object" },
+          "url": { "description": "Absolute URL of the collection manifest.", "type": "string", "format": "uri" },
+          "count": { "type": "integer" },
+          "landscape_count": { "description": "Items wider than tall.", "type": "integer" },
+          "uhd_count": { "description": "Items with at least 3840 px on the long edge.", "type": "integer" },
+          "ai_generated_count": { "type": "integer" },
+          "licences": { "type": "object", "additionalProperties": { "type": "integer" } },
+          "cover": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "title", "artist", "thumbnail", "width", "height"],
+            "properties": {
+              "id": { "type": "string" },
+              "title": { "type": "string" },
+              "artist": { "type": "string" },
+              "thumbnail": { "type": "string", "format": "uri" },
+              "width": { "type": "integer" },
+              "height": { "type": "integer" }
+            }
+          }
+        }
+      }
+    }
+  }
+}
