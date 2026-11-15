@@ -65,7 +65,7 @@ curl -s -H "User-Agent: $UA" "https://api.smk.dk/api/v1/art/search/?keys=fog&row
 
 **The Met** (CC0 when public domain): `https://collectionapi.metmuseum.org/public/collection/v1.1/search?q=fog&hasImages=true&isPublicDomain=true&limit=50`, then reference objects as `met:<objectID>`.
 
-Collect more candidates than you need (about 1.5×); the tooling drops what fails.
+Collect two to three times as many candidates as you need: on Wikidata many lesser-known works only have small images, and the tooling drops anything below 1920 px, without an open licence or not clearly public domain.
 
 ## 2. Write the works list and build the manifest
 
