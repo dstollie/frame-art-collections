@@ -1,0 +1,23 @@
+scripts/lib/resolve.test.ts
+  s_35b33d2053e250::t_4393bc1b398eda 1-37
+scripts/lib/resolve.ts
+  s_35b33d2053e250::t_bd8c20702536e4 1-104
+scripts/new-collection.ts
+  s_35b33d2053e250::t_2057a352afc590 1-86
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6aeab767276b50d7f9ea3dac0ab470a12c0f8f23",
+  "prompts": {},
+  "sessions": {
+    "s_35b33d2053e250": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "506a1efe-c71b-46d2-9d51-9112d86d6e2d",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Dennis Stolmeijer <dennisstolmeijer@gmail.com>"
+    }
+  }
+}
