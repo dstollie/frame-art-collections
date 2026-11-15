@@ -1,0 +1,35 @@
+.editorconfig
+  s_35b33d2053e250::t_b590e7c7d1a3a7 1-12
+.gitignore
+  s_35b33d2053e250::t_dce7f0309513f3 1-5
+.nvmrc
+  s_35b33d2053e250::t_4d9a1b26c80c9c 1
+.oxfmtrc.json
+  s_35b33d2053e250::t_94f48dfe8ad34e 1-17
+.oxlintrc.json
+  s_35b33d2053e250::t_80a51d08d84dfa 1-22
+LICENSE
+  s_35b33d2053e250::t_7e505aac5fc27d 1-25
+package.json
+  s_35b33d2053e250::t_f0566ebadf95d1 1-35
+pnpm-lock.yaml
+  s_35b33d2053e250::t_3074715c4628bd 1-873
+tsconfig.json
+  s_35b33d2053e250::t_690ffe26d56de5 1-21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "703d0285dd0bca2e3e0243eed1ccba945e514e59",
+  "prompts": {},
+  "sessions": {
+    "s_35b33d2053e250": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "506a1efe-c71b-46d2-9d51-9112d86d6e2d",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Dennis Stolmeijer <dennisstolmeijer@gmail.com>"
+    }
+  }
+}
