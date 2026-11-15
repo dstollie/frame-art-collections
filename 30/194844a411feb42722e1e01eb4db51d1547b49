@@ -1,0 +1,29 @@
+.github/ISSUE_TEMPLATE/config.yml
+  s_35b33d2053e250::t_57f9fdec607de5 1-5
+.github/ISSUE_TEMPLATE/new-collection.yml
+  s_35b33d2053e250::t_e3a7d570edb1c7 1-57
+.github/PULL_REQUEST_TEMPLATE.md
+  s_35b33d2053e250::t_e32a68999b120c 1-11
+.github/workflows/issue-to-pr.yml
+  s_35b33d2053e250::t_980ab89c51d659 1-82
+scripts/issue-form.test.ts
+  s_35b33d2053e250::t_94b487aa5b520d 1-51
+scripts/issue-form.ts
+  s_35b33d2053e250::t_fc6c170e27bfc7 1-84
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "30194844a411feb42722e1e01eb4db51d1547b49",
+  "prompts": {},
+  "sessions": {
+    "s_35b33d2053e250": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "506a1efe-c71b-46d2-9d51-9112d86d6e2d",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Dennis Stolmeijer <dennisstolmeijer@gmail.com>"
+    }
+  }
+}
