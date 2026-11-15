@@ -1,0 +1,37 @@
+scripts/seed.ts
+  s_35b33d2053e250::t_05fddbe0d95ba7 1-106
+scripts/seed/ai.ts
+  s_35b33d2053e250::t_e092a9af269c4f 1-59
+scripts/seed/colour.ts
+  s_35b33d2053e250::t_4d6958dfed9106 1-74
+scripts/seed/defs.ts
+  s_35b33d2053e250::t_94c19583ff9982 1-442
+scripts/seed/moods.ts
+  s_35b33d2053e250::t_2a916ede5e43c8 1-61
+scripts/seed/pipeline.ts
+  s_35b33d2053e250::t_8076a5a5f3753d 1-202
+scripts/sources/commons.ts
+  s_35b33d2053e250::t_dfae00f5fdf2de 1-141
+scripts/sources/met.ts
+  s_35b33d2053e250::t_e9be71624ab4f3 1-49
+scripts/sources/smk.ts
+  s_35b33d2053e250::t_edb549b31e7569 1-97
+scripts/sources/wikidata.ts
+  s_35b33d2053e250::t_7b73d50a403bf1 1-98
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "401376e700b64c3914a26733644608c4a0ffe543",
+  "prompts": {},
+  "sessions": {
+    "s_35b33d2053e250": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "506a1efe-c71b-46d2-9d51-9112d86d6e2d",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Dennis Stolmeijer <dennisstolmeijer@gmail.com>"
+    }
+  }
+}
