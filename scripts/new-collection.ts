@@ -5,7 +5,7 @@ import { parseArgs } from "node:util"
 import { COLLECTIONS_DIR, writeCollection } from "./lib/collections.ts"
 import { resolve } from "./lib/resolve.ts"
 import { collectionFindings, schemaFindings } from "./lib/rules.ts"
-import { SCHEMA_URL, isLandscape, type Collection } from "./lib/types.ts"
+import { MIN_PX, SCHEMA_URL, isLandscape, longEdge, type Collection } from "./lib/types.ts"
 
 const HELP = `Create or extend a collection from a list of works.
 
@@ -68,7 +68,15 @@ const base: Collection = exists
     }
 
 const known = new Set(base.items.map((i) => i.id))
-const added = items.filter((i) => !known.has(i.id) && (known.add(i.id), true))
+const added = items.filter((i) => {
+  if (longEdge(i) < MIN_PX) {
+    failed.push({ line: i.source_url, reason: `${i.width}×${i.height} is below the ${MIN_PX} px minimum` })
+    return false
+  }
+  if (known.has(i.id)) return false
+  known.add(i.id)
+  return true
+})
 base.items.push(...added)
 if (!base.cover || !base.items.some((i) => i.id === base.cover))
   base.cover = (base.items.find(isLandscape) ?? base.items[0])?.id ?? ""
