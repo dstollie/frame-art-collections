@@ -8,6 +8,7 @@ body:
       value: |
         List works that are public domain, CC0, CC BY or CC BY-SA. A bot looks each one up, checks licence and resolution and opens a pull request. Works it cannot verify are listed in a comment.
   - type: input
+    id: collection_id
     attributes:
       label: Collection id
       description: Lowercase letters, digits and dashes. Becomes the file name.
@@ -15,27 +16,32 @@ body:
     validations:
       required: true
   - type: input
+    id: collection_title
     attributes:
       label: Title
       placeholder: Misty mornings
     validations:
       required: true
   - type: textarea
+    id: description
     attributes:
       label: Description
       description: One or two sentences, 20–600 characters.
     validations:
       required: true
   - type: input
+    id: tags
     attributes:
       label: Tags
       description: Comma-separated.
       placeholder: mist, landscape, calm
   - type: input
+    id: curator
     attributes:
       label: Curator name
       description: How you want to be credited. Defaults to your GitHub name.
   - type: textarea
+    id: works
     attributes:
       label: Works
       description: |
