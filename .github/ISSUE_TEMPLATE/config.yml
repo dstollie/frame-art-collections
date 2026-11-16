@@ -1,5 +1,8 @@
 blank_issues_enabled: true
 contact_links:
-  - name: Frame Art add-on (app issues)
+  - name: Questions and show-and-tell
+    url: https://github.com/dstollie/frame-art-collections/discussions
+    about: Ask a question, share your wall, or discuss a bigger idea.
+  - name: Frame Art app (add-on, panel, integration)
     url: https://github.com/dstollie/ha-frame-art/issues
-    about: Problems with the Home Assistant add-on itself go here.
+    about: Problems with the Home Assistant app itself go here.

@@ -1,0 +1,28 @@
+name: Collection idea
+description: Suggest a theme for a collection, for you or someone else to build.
+title: "Idea: "
+labels: ["collection-idea"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have the works already? Use the **New collection** form instead: a bot turns it into a pull request.
+  - type: textarea
+    id: theme
+    attributes:
+      label: Theme
+      description: What ties the works together, and why it would look good on a Frame.
+      placeholder: Japanese woodblock prints of rain and snow, mostly landscape format.
+    validations:
+      required: true
+  - type: textarea
+    id: examples
+    attributes:
+      label: A few example works
+      description: Links to Wikimedia Commons, Wikidata, SMK or The Met, if you know some.
+  - type: checkboxes
+    id: help
+    attributes:
+      label: Will you build it?
+      options:
+        - label: I'd like to build this collection myself

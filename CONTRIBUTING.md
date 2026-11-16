@@ -2,6 +2,8 @@
 
 Thanks for adding art. A good collection is one you would actually leave on your wall for a week.
 
+**First time?** Pick an issue labelled [good first collection](https://github.com/dstollie/frame-art-collections/labels/good%20first%20collection): the theme is chosen, you find the works. The [issue form](https://github.com/dstollie/frame-art-collections/issues/new?template=new-collection.yml) needs no Git at all, and the [`add-collection` skill](.agents/skills/add-collection/SKILL.md) lets an AI agent do the searching. Questions go in [Discussions](https://github.com/dstollie/frame-art-collections/discussions).
+
 ## Curation rules
 
 1. **Open licences only.** Public domain, CC0, CC BY or CC BY-SA. No NC, no ND, no "free for personal use", no "found it on Pinterest". `source_url` must point to a page that states the licence.
