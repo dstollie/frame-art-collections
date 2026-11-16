@@ -1,0 +1,19 @@
+.github/ISSUE_TEMPLATE/new-collection.yml
+  s_35b33d2053e250::t_39ba253c106b3a 11,19,26,33,39,44
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f0e9c70507e0077a1137c0e1b235ccfae97a2976",
+  "prompts": {},
+  "sessions": {
+    "s_35b33d2053e250": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "506a1efe-c71b-46d2-9d51-9112d86d6e2d",
+        "model": "unknown"
+      },
+      "human_author": "Dennis Stolmeijer <dennisstolmeijer@gmail.com>"
+    }
+  }
+}
