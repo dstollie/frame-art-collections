@@ -1,0 +1,31 @@
+scripts/lib/site.test.ts
+  s_40acdc32effda0::t_3808cef9f03ea4 1-110
+  s_40acdc32effda0::t_91c6f7769a7a9a 111-122
+scripts/lib/site.ts
+  s_40acdc32effda0::t_895c3a8df37459 1-196
+  s_40acdc32effda0::t_78f62e64a74aff 197-207
+scripts/build-site.ts
+  s_40acdc32effda0::t_84e403ac0e1a55 5-6,20-26
+site/brand/mark-dark.svg
+  s_40acdc32effda0::t_5c45d700213990 1
+site/brand/mark.svg
+  s_40acdc32effda0::t_229eed84fadd02 1
+site/favicon.svg
+  s_40acdc32effda0::t_44ffc6e6bbaac9 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "baa8a48c3be90c5ccd68e63913093de1b5e60856",
+  "prompts": {},
+  "sessions": {
+    "s_40acdc32effda0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d7262b8b-4dd7-4e00-90b9-8036f831f03f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Dennis Stolmeijer <dennisstolmeijer@gmail.com>"
+    }
+  }
+}
